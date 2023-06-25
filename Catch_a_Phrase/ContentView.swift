@@ -75,19 +75,7 @@ struct ContentView: View {
      }
      */
     var body: some View {
-        VStack {
-            TextView(content: " - ", size: 32)
-                .border(.red)
-            TextView(content: "Hello", language: .En, size: 32)
-        }
-        .onAppear {
-            for family: String in UIFont.familyNames {
-                print(family)
-                for names : String in UIFont.fontNames(forFamilyName: family){
-                    print("=== \(names)")
-                }
-            }
-        }
+        StartPageView()
     }
 }
 

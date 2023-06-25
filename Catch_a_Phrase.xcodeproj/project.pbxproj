@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A9046DC02A4896EF00240385 /* SharedVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9046DBF2A4896EF00240385 /* SharedVM.swift */; };
+		A9046DC22A489B0600240385 /* LibreBaskerville-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9046DC12A489B0600240385 /* LibreBaskerville-Regular.ttf */; };
+		A98681212A487C4F00C58C8B /* StartPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98681202A487C4F00C58C8B /* StartPageView.swift */; };
+		A98681252A4885BD00C58C8B /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98681242A4885BD00C58C8B /* Bundle+Extension.swift */; };
 		A99800032A2DFA76008332B4 /* PoemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99800022A2DFA76008332B4 /* PoemModel.swift */; };
 		A99800062A2DFB40008332B4 /* StageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99800052A2DFB40008332B4 /* StageModel.swift */; };
 		A99800082A2E07CC008332B4 /* GraphPaperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99800072A2E07CC008332B4 /* GraphPaperView.swift */; };
@@ -47,6 +51,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A9046DBF2A4896EF00240385 /* SharedVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedVM.swift; sourceTree = "<group>"; };
+		A9046DC12A489B0600240385 /* LibreBaskerville-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LibreBaskerville-Regular.ttf"; sourceTree = "<group>"; };
+		A98681202A487C4F00C58C8B /* StartPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartPageView.swift; sourceTree = "<group>"; };
+		A98681222A4881EE00C58C8B /* shared.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = shared.xcconfig; sourceTree = "<group>"; };
+		A98681242A4885BD00C58C8B /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
 		A99800022A2DFA76008332B4 /* PoemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemModel.swift; sourceTree = "<group>"; };
 		A99800052A2DFB40008332B4 /* StageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageModel.swift; sourceTree = "<group>"; };
 		A99800072A2E07CC008332B4 /* GraphPaperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphPaperView.swift; sourceTree = "<group>"; };
@@ -99,6 +108,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A9046DBE2A4896CE00240385 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A9046DBF2A4896EF00240385 /* SharedVM.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A986811F2A487C3C00C58C8B /* Page */ = {
+			isa = PBXGroup;
+			children = (
+				A98681202A487C4F00C58C8B /* StartPageView.swift */,
+			);
+			path = Page;
+			sourceTree = "<group>";
+		};
+		A98681232A48830900C58C8B /* XCConfig */ = {
+			isa = PBXGroup;
+			children = (
+				A98681222A4881EE00C58C8B /* shared.xcconfig */,
+			);
+			path = XCConfig;
+			sourceTree = "<group>";
+		};
 		A99800002A2DF9D2008332B4 /* Spacing */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +178,7 @@
 		A998FFDB2A2DD551008332B4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A986811F2A487C3C00C58C8B /* Page */,
 				A998FFF62A2DF6D0008332B4 /* Component */,
 			);
 			path = View;
@@ -154,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				A998FFE42A2DECAE008332B4 /* FontUtils */,
+				A98681242A4885BD00C58C8B /* Bundle+Extension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -213,6 +248,8 @@
 		A9FD56E32A1BA8AF00F95AFD = {
 			isa = PBXGroup;
 			children = (
+				A98681232A48830900C58C8B /* XCConfig */,
+				A9046DC12A489B0600240385 /* LibreBaskerville-Regular.ttf */,
 				A99FC94C2A41F80F00F23DE1 /* NanumMyeongjo-YetHangul.ttf */,
 				A9FD56EE2A1BA8AF00F95AFD /* Catch_a_Phrase */,
 				A9FD57052A1BA8B100F95AFD /* Catch_a_PhraseTests */,
@@ -234,6 +271,7 @@
 		A9FD56EE2A1BA8AF00F95AFD /* Catch_a_Phrase */ = {
 			isa = PBXGroup;
 			children = (
+				A9046DBE2A4896CE00240385 /* ViewModel */,
 				A99FC9512A41FAB500F23DE1 /* Catch-a-Phrase-Info.plist */,
 				A998FFEF2A2DF0A0008332B4 /* Extension */,
 				A998FFE72A2DED39008332B4 /* Style */,
@@ -379,6 +417,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A99FC94D2A41F80F00F23DE1 /* NanumMyeongjo-YetHangul.ttf in Resources */,
+				A9046DC22A489B0600240385 /* LibreBaskerville-Regular.ttf in Resources */,
 				A9FD56F72A1BA8B100F95AFD /* Preview Assets.xcassets in Resources */,
 				A9FD56F42A1BA8B100F95AFD /* Assets.xcassets in Resources */,
 			);
@@ -408,15 +447,18 @@
 				A998FFDE2A2DEADA008332B4 /* CustomFont.swift in Sources */,
 				A998FFFF2A2DF9BE008332B4 /* CGFloat+Extension.swift in Sources */,
 				A998FFFC2A2DF91E008332B4 /* Color+Extension.swift in Sources */,
+				A98681252A4885BD00C58C8B /* Bundle+Extension.swift in Sources */,
 				A9FD56FC2A1BA8B100F95AFD /* Catch_a_Phrase.xcdatamodeld in Sources */,
 				A99800082A2E07CC008332B4 /* GraphPaperView.swift in Sources */,
 				A998FFF52A2DF4B4008332B4 /* View+Extension.swift in Sources */,
+				A9046DC02A4896EF00240385 /* SharedVM.swift in Sources */,
 				A998FFF12A2DF0B2008332B4 /* Font+Extension.swift in Sources */,
 				A9FD56F92A1BA8B100F95AFD /* Persistence.swift in Sources */,
 				A9FD56F22A1BA8AF00F95AFD /* ContentView.swift in Sources */,
 				A99800032A2DFA76008332B4 /* PoemModel.swift in Sources */,
 				A998FFFA2A2DF6FD008332B4 /* TextView.swift in Sources */,
 				A9FD56F02A1BA8AF00F95AFD /* Catch_a_PhraseApp.swift in Sources */,
+				A98681212A487C4F00C58C8B /* StartPageView.swift in Sources */,
 				A99800062A2DFB40008332B4 /* StageModel.swift in Sources */,
 				A998FFF32A2DF152008332B4 /* FontStyle.swift in Sources */,
 			);
@@ -457,6 +499,7 @@
 /* Begin XCBuildConfiguration section */
 		A9FD57142A1BA8B100F95AFD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A98681222A4881EE00C58C8B /* shared.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -517,6 +560,7 @@
 		};
 		A9FD57152A1BA8B100F95AFD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A98681222A4881EE00C58C8B /* shared.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -571,6 +615,7 @@
 		};
 		A9FD57172A1BA8B100F95AFD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A98681222A4881EE00C58C8B /* shared.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -601,6 +646,7 @@
 		};
 		A9FD57182A1BA8B100F95AFD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A98681222A4881EE00C58C8B /* shared.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -631,6 +677,7 @@
 		};
 		A9FD571A2A1BA8B100F95AFD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A98681222A4881EE00C58C8B /* shared.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -651,6 +698,7 @@
 		};
 		A9FD571B2A1BA8B100F95AFD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A98681222A4881EE00C58C8B /* shared.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -671,6 +719,7 @@
 		};
 		A9FD571D2A1BA8B100F95AFD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A98681222A4881EE00C58C8B /* shared.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -689,6 +738,7 @@
 		};
 		A9FD571E2A1BA8B100F95AFD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A98681222A4881EE00C58C8B /* shared.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

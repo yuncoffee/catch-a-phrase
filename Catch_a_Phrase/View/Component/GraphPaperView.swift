@@ -28,7 +28,7 @@ struct GraphPaperView: View {
                 .border(Color.systemGray4, width: 2)
                 .foregroundColor(.clear)
         }
-        .frame(width: size, height: size)
+        .frame(maxWidth: size, maxHeight: size)
     }
 }
 

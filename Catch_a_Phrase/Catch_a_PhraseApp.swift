@@ -10,12 +10,20 @@ import SwiftUI
 @main
 struct Catch_a_PhraseApp: App {
     let persistenceController = PersistenceController.shared
-
+    
     var body: some Scene {
         WindowGroup {
             NavigationStack {
                 ContentView()
                     .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                    .onAppear {
+                        for family: String in UIFont.familyNames {
+                            print(family)
+                            for names : String in UIFont.fontNames(forFamilyName: family){
+                                print("=== \(names)")
+                            }
+                        }
+                    }
             }
         }
     }

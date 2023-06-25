@@ -10,7 +10,7 @@ import SwiftUI
 
 enum CustomFontStyle: String, Hashable {
     case Kr = "NanumMyeongjo-YetHangul"
-    case En = "Baskerville"
+    case En = "LibreBaskerville-Regular"
 }
 
 struct CustomFontModifier: ViewModifier {
