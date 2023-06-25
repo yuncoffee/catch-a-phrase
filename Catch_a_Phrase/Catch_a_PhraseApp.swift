@@ -11,15 +11,12 @@ import SwiftUI
 struct Catch_a_PhraseApp: App {
     let persistenceController = PersistenceController.shared
 
-    init() {
-//        CustomFont.registerFonts(fontName: "NanumMyeongjo-YetHangul")
-//        CustomFont.registerFonts(fontName: "LibreBaskerville-Regular")
-    }
-    
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            NavigationStack {
+                ContentView()
+                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            }
         }
     }
 }

@@ -43,7 +43,7 @@ extension GraphPaperView {
         func path(in rect: CGRect) -> Path {
             let start = CGPoint(x: rect.minX, y: rect.midY)
             let end = CGPoint(x: rect.maxX, y: rect.midY)
-
+            
             return Path { p in
                 p.move(to: start)
                 p.addLine(to: end)
