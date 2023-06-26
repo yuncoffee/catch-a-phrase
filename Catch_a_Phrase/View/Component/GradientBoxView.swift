@@ -8,13 +8,22 @@
 import SwiftUI
 
 struct GradientBoxView: View {
-    private var gradientStart = Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 0))
-    private var gradientEnd = Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))
+    @Environment(\.colorScheme)
+    private var colorScheme
+    
+    private var gradientStart_light = Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 0))
+    private var gradientEnd_light = Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))
+    
+    private var gradientStart_dark = Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 0))
+    private var gradientEnd_dark = Color(UIColor.systemBackground)
     
     var body: some View {
         Rectangle()
             .fill(LinearGradient(
-              gradient: .init(colors: [gradientStart, gradientEnd]),
+                gradient: .init(colors: colorScheme == .light
+                    ? [gradientStart_light, gradientEnd_light]
+                    : [gradientStart_dark, gradientEnd_dark]
+               ),
               startPoint: .init(x: 0.5, y: 0),
               endPoint: .init(x: 0.5, y: 0.6)
             ))

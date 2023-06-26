@@ -18,51 +18,63 @@ struct StageListPageView: View {
 }
 
 extension StageListPageView {
-    
+    // MARK: ContainerView
     private func ContainerView() -> some View {
-        GeometryReader { geo in
+        let outterPadding = .spacing_medium * 2
+        let innerPadding = .spacing_medium * 4
+        let iPadOSBoxSize: CGFloat = 240
+        
+        return GeometryReader { geo in
             VStack(spacing: 0) {
                 VStack(spacing: 0) {
                     GradientBoxView()
-                        .frame(maxWidth: .infinity, maxHeight: 24)
+                        .frame(maxWidth: .infinity, maxHeight: .spacing_medium)
                         .rotationEffect(Angle.degrees(180))
-                        .offset(y: 24)
+                        .offset(y: .spacing_medium)
                         .zIndex(1)
                     ScrollView() {
                         VStack {
-                            StageListView(size: geo.size.width - 96)
+                            StageListView(
+                                size: SharedVM.isIOS
+                                ? geo.size.width - innerPadding
+                                : iPadOSBoxSize)
                         }
-                        .padding(.vertical, 24)
-                        .frame(minHeight: geo.size.height - 96)
+                        .padding(.vertical, .spacing_medium)
+                        .frame(minHeight: geo.size.height - innerPadding)
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     GradientBoxView()
-                        .frame(maxWidth: .infinity, maxHeight: 24)
-                        .offset(y: -24)
+                        .frame(maxWidth: .infinity, maxHeight: .spacing_medium)
+                        .offset(y: -.spacing_medium)
                 }
-                .frame(maxWidth: .infinity - 48, maxHeight: .infinity, alignment: .center)
+                .frame(
+                    maxWidth: .infinity - outterPadding,
+                    maxHeight: .infinity,
+                    alignment: .center)
             }
-            .background(Color.systemWhite)
+            .background(Color(UIColor.systemBackground))
             .cornerRadius(16)
-            .padding(24)
+            .padding(.spacing_medium)
             .background(Color.systemGray6)
         }
     }
     
+    // MARK: BackLinkButtonView
     private func _BackLinkButtonView(completion: @escaping()->()) -> some View {
         BackLinkButtonView {
             completion()
         }
     }
     
+    // MARK: StageListView
     private func StageListView(size: CGFloat) -> some View {
-        let iOSGridItem = [GridItem(.fixed(320), spacing: 24)]
+        let iOSGridItem = [GridItem(.fixed(size), spacing: .spacing_medium)]
         let iPadOSGridItem = [
-            GridItem(.fixed(240), spacing: 24),
-            GridItem(.fixed(240), spacing: 24)
+            GridItem(.fixed(240), spacing: .spacing_medium),
+            GridItem(.fixed(240), spacing: .spacing_medium)
         ]
         
-        return LazyVGrid(columns: SharedVM.isIOS ? iOSGridItem : iPadOSGridItem, alignment: .center, spacing: 24) {
+        return LazyVGrid(columns: SharedVM.isIOS ? iOSGridItem : iPadOSGridItem, alignment: .center, spacing: .spacing_medium) {
             ForEach(0..<4) { index in
                 ZStack {
                     GraphPaperView(size: size)
@@ -79,6 +91,7 @@ struct StageListPageView_Previews: PreviewProvider {
         NavigationStack {
             //            ContentView()
             StageListPageView()
+                .navigationBarTitleDisplayMode(.inline)
         }
     }
 }

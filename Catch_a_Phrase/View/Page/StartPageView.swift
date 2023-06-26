@@ -57,7 +57,7 @@ extension StartPageView {
                     .frame(maxWidth: .infinity - 48)
                 }
             }
-            .background(Color.systemWhite)
+            .background(Color(UIColor.systemBackground))
             .cornerRadius(16)
             .padding(24)
             .background(Color.systemGray6)
@@ -82,7 +82,7 @@ extension StartPageView {
                 size: 64
             )
             .multilineTextAlignment(.center)
-            .foregroundColor(.systemBlack)
+            .foregroundColor(Color(UIColor.label))
         }
     }
     
@@ -97,7 +97,7 @@ extension StartPageView {
                     maxWidth: SharedVM.isIOS ? .infinity : 320,
                     maxHeight: 80
                 )
-                .foregroundColor(.systemBlack)
+                .foregroundColor(Color(UIColor.label))
                 .overlay {
                     RoundedRectangle(cornerRadius: 4)
                         .stroke(Color.systemGray3, lineWidth: 2)
@@ -136,7 +136,7 @@ extension StartPageView {
                 
                 Enjoy Catch a Phrase!
                 """, language: .En, size: 24)
-                .foregroundColor(.systemBlack)
+                .foregroundColor(Color(UIColor.label))
                 .multilineTextAlignment(.leading)
             }
         }

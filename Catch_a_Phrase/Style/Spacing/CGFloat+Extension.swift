@@ -23,6 +23,8 @@ extension CGFloat {
     static let spacing56 = 56.0
     static let spacing64 = 64.0
     
+    static let spacing_medium = 24.0
+    
     /// 24px
     static let btn_inner_medium = 24.0
     /// 40px
