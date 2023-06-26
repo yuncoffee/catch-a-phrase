@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		A9046DC02A4896EF00240385 /* SharedVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9046DBF2A4896EF00240385 /* SharedVM.swift */; };
 		A9046DC22A489B0600240385 /* LibreBaskerville-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9046DC12A489B0600240385 /* LibreBaskerville-Regular.ttf */; };
+		A9046DC42A496AE900240385 /* StageListPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9046DC32A496AE900240385 /* StageListPageView.swift */; };
+		A9046DC62A4971E800240385 /* BackLinkButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9046DC52A4971E800240385 /* BackLinkButtonView.swift */; };
+		A9046DC82A49B97100240385 /* GradientBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9046DC72A49B97100240385 /* GradientBoxView.swift */; };
 		A98681212A487C4F00C58C8B /* StartPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98681202A487C4F00C58C8B /* StartPageView.swift */; };
 		A98681252A4885BD00C58C8B /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98681242A4885BD00C58C8B /* Bundle+Extension.swift */; };
 		A99800032A2DFA76008332B4 /* PoemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99800022A2DFA76008332B4 /* PoemModel.swift */; };
@@ -53,6 +56,9 @@
 /* Begin PBXFileReference section */
 		A9046DBF2A4896EF00240385 /* SharedVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedVM.swift; sourceTree = "<group>"; };
 		A9046DC12A489B0600240385 /* LibreBaskerville-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LibreBaskerville-Regular.ttf"; sourceTree = "<group>"; };
+		A9046DC32A496AE900240385 /* StageListPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageListPageView.swift; sourceTree = "<group>"; };
+		A9046DC52A4971E800240385 /* BackLinkButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackLinkButtonView.swift; sourceTree = "<group>"; };
+		A9046DC72A49B97100240385 /* GradientBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBoxView.swift; sourceTree = "<group>"; };
 		A98681202A487C4F00C58C8B /* StartPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartPageView.swift; sourceTree = "<group>"; };
 		A98681222A4881EE00C58C8B /* shared.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = shared.xcconfig; sourceTree = "<group>"; };
 		A98681242A4885BD00C58C8B /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
@@ -120,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				A98681202A487C4F00C58C8B /* StartPageView.swift */,
+				A9046DC32A496AE900240385 /* StageListPageView.swift */,
 			);
 			path = Page;
 			sourceTree = "<group>";
@@ -233,6 +240,8 @@
 			children = (
 				A998FFF92A2DF6FD008332B4 /* TextView.swift */,
 				A99800072A2E07CC008332B4 /* GraphPaperView.swift */,
+				A9046DC52A4971E800240385 /* BackLinkButtonView.swift */,
+				A9046DC72A49B97100240385 /* GradientBoxView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -448,10 +457,13 @@
 				A998FFFF2A2DF9BE008332B4 /* CGFloat+Extension.swift in Sources */,
 				A998FFFC2A2DF91E008332B4 /* Color+Extension.swift in Sources */,
 				A98681252A4885BD00C58C8B /* Bundle+Extension.swift in Sources */,
+				A9046DC62A4971E800240385 /* BackLinkButtonView.swift in Sources */,
 				A9FD56FC2A1BA8B100F95AFD /* Catch_a_Phrase.xcdatamodeld in Sources */,
 				A99800082A2E07CC008332B4 /* GraphPaperView.swift in Sources */,
+				A9046DC42A496AE900240385 /* StageListPageView.swift in Sources */,
 				A998FFF52A2DF4B4008332B4 /* View+Extension.swift in Sources */,
 				A9046DC02A4896EF00240385 /* SharedVM.swift in Sources */,
+				A9046DC82A49B97100240385 /* GradientBoxView.swift in Sources */,
 				A998FFF12A2DF0B2008332B4 /* Font+Extension.swift in Sources */,
 				A9FD56F92A1BA8B100F95AFD /* Persistence.swift in Sources */,
 				A9FD56F22A1BA8AF00F95AFD /* ContentView.swift in Sources */,

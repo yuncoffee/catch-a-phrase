@@ -10,9 +10,9 @@ import SwiftUI
 struct StartPageView: View {
     @State
     private var isShowPopover = false
-    
+    @State
+    private var isShowStage = false
     private let APP_NAME = Bundle.main.appName
-    
     private let btnSize: CGFloat = .btn_inner_medium
     private let btnTouchAreaSize: CGFloat = .btn_outer_medium
     
@@ -90,8 +90,9 @@ extension StartPageView {
     private func StartButtonView() -> some View {
         Button(action: {
             print("link to select stage!")
+            isShowStage.toggle()
         }, label: {
-            TextView(content: "Start", language: .En, size:40)
+            TextView(content: "Start", language: .En, size: 40)
                 .frame(
                     maxWidth: SharedVM.isIOS ? .infinity : 320,
                     maxHeight: 80
@@ -102,6 +103,9 @@ extension StartPageView {
                         .stroke(Color.systemGray3, lineWidth: 2)
                 }
         })
+        .navigationDestination(isPresented: $isShowStage) {
+            StageListPageView()
+        }
     }
     
     // MARK: AppDescriptionView
