@@ -11,6 +11,9 @@ struct StageListPageView: View {
     @Environment(\.presentationMode)
     private var presentationMode
     
+    @State
+    private var isShowCanvas = false
+    
     var body: some View {
         ContainerView()
             .navigationTitle("Stage")
@@ -52,8 +55,7 @@ extension StageListPageView {
                     maxHeight: .infinity,
                     alignment: .center)
             }
-            .background(Color(UIColor.systemBackground))
-            .cornerRadius(16)
+            .whiteBackgroundContainerStyleModifier()
             .padding(.spacing_medium)
             .background(Color.systemGray6)
         }
@@ -76,10 +78,15 @@ extension StageListPageView {
         
         return LazyVGrid(columns: SharedVM.isIOS ? iOSGridItem : iPadOSGridItem, alignment: .center, spacing: .spacing_medium) {
             ForEach(0..<4) { index in
-                ZStack {
-                    GraphPaperView(size: size)
-                        .frame(minHeight: size)
-                    TextView(content: "가", size: 120)
+                NavigationLink {
+                    CanvasPageView()
+                } label: {
+                    ZStack {
+                        GraphPaperView(size: size)
+                            .frame(minHeight: size)
+                        TextView(content: "가", size: 120)
+                            .foregroundColor(Color(UIColor.label))
+                    }
                 }
             }
         }
@@ -89,8 +96,8 @@ extension StageListPageView {
 struct StageListPageView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            //            ContentView()
-            StageListPageView()
+            ContentView()
+            //            StageListPageView()
                 .navigationBarTitleDisplayMode(.inline)
         }
     }

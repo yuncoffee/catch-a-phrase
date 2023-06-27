@@ -12,6 +12,8 @@
 		A9046DC42A496AE900240385 /* StageListPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9046DC32A496AE900240385 /* StageListPageView.swift */; };
 		A9046DC62A4971E800240385 /* BackLinkButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9046DC52A4971E800240385 /* BackLinkButtonView.swift */; };
 		A9046DC82A49B97100240385 /* GradientBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9046DC72A49B97100240385 /* GradientBoxView.swift */; };
+		A9046DCA2A49C36D00240385 /* CanvasPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9046DC92A49C36D00240385 /* CanvasPageView.swift */; };
+		A934BBB92A4B10EE0021C266 /* LayoutStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A934BBB82A4B10EE0021C266 /* LayoutStyle.swift */; };
 		A98681212A487C4F00C58C8B /* StartPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98681202A487C4F00C58C8B /* StartPageView.swift */; };
 		A98681252A4885BD00C58C8B /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98681242A4885BD00C58C8B /* Bundle+Extension.swift */; };
 		A99800032A2DFA76008332B4 /* PoemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99800022A2DFA76008332B4 /* PoemModel.swift */; };
@@ -59,6 +61,8 @@
 		A9046DC32A496AE900240385 /* StageListPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageListPageView.swift; sourceTree = "<group>"; };
 		A9046DC52A4971E800240385 /* BackLinkButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackLinkButtonView.swift; sourceTree = "<group>"; };
 		A9046DC72A49B97100240385 /* GradientBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBoxView.swift; sourceTree = "<group>"; };
+		A9046DC92A49C36D00240385 /* CanvasPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasPageView.swift; sourceTree = "<group>"; };
+		A934BBB82A4B10EE0021C266 /* LayoutStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutStyle.swift; sourceTree = "<group>"; };
 		A98681202A487C4F00C58C8B /* StartPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartPageView.swift; sourceTree = "<group>"; };
 		A98681222A4881EE00C58C8B /* shared.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = shared.xcconfig; sourceTree = "<group>"; };
 		A98681242A4885BD00C58C8B /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
@@ -122,11 +126,20 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		A934BBB72A4B10B80021C266 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				A934BBB82A4B10EE0021C266 /* LayoutStyle.swift */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
 		A986811F2A487C3C00C58C8B /* Page */ = {
 			isa = PBXGroup;
 			children = (
 				A98681202A487C4F00C58C8B /* StartPageView.swift */,
 				A9046DC32A496AE900240385 /* StageListPageView.swift */,
+				A9046DC92A49C36D00240385 /* CanvasPageView.swift */,
 			);
 			path = Page;
 			sourceTree = "<group>";
@@ -211,6 +224,7 @@
 		A998FFE72A2DED39008332B4 /* Style */ = {
 			isa = PBXGroup;
 			children = (
+				A934BBB72A4B10B80021C266 /* Layout */,
 				A99800002A2DF9D2008332B4 /* Spacing */,
 				A998FFFD2A2DF952008332B4 /* Color */,
 				A998FFE82A2DED46008332B4 /* Font */,
@@ -456,11 +470,13 @@
 				A998FFDE2A2DEADA008332B4 /* CustomFont.swift in Sources */,
 				A998FFFF2A2DF9BE008332B4 /* CGFloat+Extension.swift in Sources */,
 				A998FFFC2A2DF91E008332B4 /* Color+Extension.swift in Sources */,
+				A9046DCA2A49C36D00240385 /* CanvasPageView.swift in Sources */,
 				A98681252A4885BD00C58C8B /* Bundle+Extension.swift in Sources */,
 				A9046DC62A4971E800240385 /* BackLinkButtonView.swift in Sources */,
 				A9FD56FC2A1BA8B100F95AFD /* Catch_a_Phrase.xcdatamodeld in Sources */,
 				A99800082A2E07CC008332B4 /* GraphPaperView.swift in Sources */,
 				A9046DC42A496AE900240385 /* StageListPageView.swift in Sources */,
+				A934BBB92A4B10EE0021C266 /* LayoutStyle.swift in Sources */,
 				A998FFF52A2DF4B4008332B4 /* View+Extension.swift in Sources */,
 				A9046DC02A4896EF00240385 /* SharedVM.swift in Sources */,
 				A9046DC82A49B97100240385 /* GradientBoxView.swift in Sources */,

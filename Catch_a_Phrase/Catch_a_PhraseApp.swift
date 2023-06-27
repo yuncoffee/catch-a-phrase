@@ -16,14 +16,6 @@ struct Catch_a_PhraseApp: App {
             NavigationStack {
                 ContentView()
                     .environment(\.managedObjectContext, persistenceController.container.viewContext)
-                    .onAppear {
-                        for family: String in UIFont.familyNames {
-                            print(family)
-                            for names : String in UIFont.fontNames(forFamilyName: family){
-                                print("=== \(names)")
-                            }
-                        }
-                    }
             }
         }
     }

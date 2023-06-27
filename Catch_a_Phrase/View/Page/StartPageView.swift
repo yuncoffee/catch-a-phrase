@@ -57,8 +57,7 @@ extension StartPageView {
                     .frame(maxWidth: .infinity - 48)
                 }
             }
-            .background(Color(UIColor.systemBackground))
-            .cornerRadius(16)
+            .whiteBackgroundContainerStyleModifier()
             .padding(24)
             .background(Color.systemGray6)
         }
