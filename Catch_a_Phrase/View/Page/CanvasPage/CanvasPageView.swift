@@ -65,7 +65,7 @@ extension CanvasPageView {
             .frame(maxWidth: .infinity, maxHeight: 64)
             // MARK: QuizView
             VStack {
-                
+                DialView()
             }
             .whiteBackgroundContainerStyleModifier()
             .padding(.horizontal, .spacing_medium)

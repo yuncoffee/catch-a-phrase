@@ -27,7 +27,7 @@ class DialVM: ObservableObject {
     @Published
     var totalRotates = [CGSize.zero, CGSize.zero, CGSize.zero] {
         didSet {
-            // 왼쪽 다이얼
+            // 왼쪽 초성 다이얼
             if prevRotates[0].height + DIAL_LIMIT_ANGLE < totalRotates[0].height {
                 prevRotates[0] = totalRotates[0]
                 krScalers[0] += 1
@@ -36,7 +36,7 @@ class DialVM: ObservableObject {
                 prevRotates[0] = totalRotates[0]
                 krScalers[0] -= 1
             }
-            // 오른쪽 다이얼
+            // 오른쪽 중성 다이얼
             if prevRotates[1].height + DIAL_LIMIT_ANGLE < totalRotates[1].height {
                 prevRotates[1] = totalRotates[1]
                 krScalers[1] += 1
@@ -45,7 +45,7 @@ class DialVM: ObservableObject {
                 prevRotates[1] = totalRotates[1]
                 krScalers[1] -= 1
             }
-            // 아래쪽 다이얼
+            // 아래쪽 종성 다이얼
             if prevRotates[2].width + DIAL_LIMIT_ANGLE < totalRotates[2].width {
                 prevRotates[2] = totalRotates[2]
                 krScalers[2] -= 1
