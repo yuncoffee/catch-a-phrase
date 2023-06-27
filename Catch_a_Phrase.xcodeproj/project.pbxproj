@@ -14,6 +14,9 @@
 		A9046DC82A49B97100240385 /* GradientBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9046DC72A49B97100240385 /* GradientBoxView.swift */; };
 		A9046DCA2A49C36D00240385 /* CanvasPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9046DC92A49C36D00240385 /* CanvasPageView.swift */; };
 		A934BBB92A4B10EE0021C266 /* LayoutStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A934BBB82A4B10EE0021C266 /* LayoutStyle.swift */; };
+		A934BBC02A4B18B70021C266 /* DialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A934BBBF2A4B18B70021C266 /* DialView.swift */; };
+		A934BBC22A4B1D720021C266 /* DialVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A934BBC12A4B1D720021C266 /* DialVM.swift */; };
+		A934BBC52A4B1DFF0021C266 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A934BBC42A4B1DFF0021C266 /* HapticManager.swift */; };
 		A98681212A487C4F00C58C8B /* StartPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98681202A487C4F00C58C8B /* StartPageView.swift */; };
 		A98681252A4885BD00C58C8B /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98681242A4885BD00C58C8B /* Bundle+Extension.swift */; };
 		A99800032A2DFA76008332B4 /* PoemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99800022A2DFA76008332B4 /* PoemModel.swift */; };
@@ -63,6 +66,9 @@
 		A9046DC72A49B97100240385 /* GradientBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBoxView.swift; sourceTree = "<group>"; };
 		A9046DC92A49C36D00240385 /* CanvasPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasPageView.swift; sourceTree = "<group>"; };
 		A934BBB82A4B10EE0021C266 /* LayoutStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutStyle.swift; sourceTree = "<group>"; };
+		A934BBBF2A4B18B70021C266 /* DialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialView.swift; sourceTree = "<group>"; };
+		A934BBC12A4B1D720021C266 /* DialVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialVM.swift; sourceTree = "<group>"; };
+		A934BBC42A4B1DFF0021C266 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
 		A98681202A487C4F00C58C8B /* StartPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartPageView.swift; sourceTree = "<group>"; };
 		A98681222A4881EE00C58C8B /* shared.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = shared.xcconfig; sourceTree = "<group>"; };
 		A98681242A4885BD00C58C8B /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
@@ -122,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				A9046DBF2A4896EF00240385 /* SharedVM.swift */,
+				A934BBC12A4B1D720021C266 /* DialVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -134,12 +141,45 @@
 			path = Layout;
 			sourceTree = "<group>";
 		};
-		A986811F2A487C3C00C58C8B /* Page */ = {
+		A934BBBA2A4B18640021C266 /* StartPage */ = {
 			isa = PBXGroup;
 			children = (
 				A98681202A487C4F00C58C8B /* StartPageView.swift */,
+			);
+			path = StartPage;
+			sourceTree = "<group>";
+		};
+		A934BBBB2A4B186F0021C266 /* StageListPage */ = {
+			isa = PBXGroup;
+			children = (
 				A9046DC32A496AE900240385 /* StageListPageView.swift */,
+			);
+			path = StageListPage;
+			sourceTree = "<group>";
+		};
+		A934BBBC2A4B187B0021C266 /* CanvasPage */ = {
+			isa = PBXGroup;
+			children = (
 				A9046DC92A49C36D00240385 /* CanvasPageView.swift */,
+				A934BBBF2A4B18B70021C266 /* DialView.swift */,
+			);
+			path = CanvasPage;
+			sourceTree = "<group>";
+		};
+		A934BBC32A4B1DDA0021C266 /* InteractionUtils */ = {
+			isa = PBXGroup;
+			children = (
+				A934BBC42A4B1DFF0021C266 /* HapticManager.swift */,
+			);
+			path = InteractionUtils;
+			sourceTree = "<group>";
+		};
+		A986811F2A487C3C00C58C8B /* Page */ = {
+			isa = PBXGroup;
+			children = (
+				A934BBBC2A4B187B0021C266 /* CanvasPage */,
+				A934BBBB2A4B186F0021C266 /* StageListPage */,
+				A934BBBA2A4B18640021C266 /* StartPage */,
 			);
 			path = Page;
 			sourceTree = "<group>";
@@ -207,6 +247,7 @@
 		A998FFDC2A2DD558008332B4 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				A934BBC32A4B1DDA0021C266 /* InteractionUtils */,
 				A998FFE42A2DECAE008332B4 /* FontUtils */,
 				A98681242A4885BD00C58C8B /* Bundle+Extension.swift */,
 			);
@@ -468,8 +509,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A998FFDE2A2DEADA008332B4 /* CustomFont.swift in Sources */,
+				A934BBC52A4B1DFF0021C266 /* HapticManager.swift in Sources */,
 				A998FFFF2A2DF9BE008332B4 /* CGFloat+Extension.swift in Sources */,
 				A998FFFC2A2DF91E008332B4 /* Color+Extension.swift in Sources */,
+				A934BBC02A4B18B70021C266 /* DialView.swift in Sources */,
 				A9046DCA2A49C36D00240385 /* CanvasPageView.swift in Sources */,
 				A98681252A4885BD00C58C8B /* Bundle+Extension.swift in Sources */,
 				A9046DC62A4971E800240385 /* BackLinkButtonView.swift in Sources */,
@@ -478,6 +521,7 @@
 				A9046DC42A496AE900240385 /* StageListPageView.swift in Sources */,
 				A934BBB92A4B10EE0021C266 /* LayoutStyle.swift in Sources */,
 				A998FFF52A2DF4B4008332B4 /* View+Extension.swift in Sources */,
+				A934BBC22A4B1D720021C266 /* DialVM.swift in Sources */,
 				A9046DC02A4896EF00240385 /* SharedVM.swift in Sources */,
 				A9046DC82A49B97100240385 /* GradientBoxView.swift in Sources */,
 				A998FFF12A2DF0B2008332B4 /* Font+Extension.swift in Sources */,

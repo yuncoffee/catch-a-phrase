@@ -16,6 +16,7 @@ struct CanvasPageView: View {
             .toolbar {
                 ShowPlayRuleButtonView()
             }
+            .navigationTitle("Playground")
     }
 }
 
@@ -134,6 +135,12 @@ extension CanvasPageView {
         }
         .padding(24)
     }
+    
+    private func ScriptView() -> some View {
+        VStack {
+            
+        }
+    }
 }
 
 struct CanvasPageView_Previews: PreviewProvider {
@@ -142,6 +149,9 @@ struct CanvasPageView_Previews: PreviewProvider {
 //            ContentView()
 //
 //        }
-        CanvasPageView()
+        NavigationStack {
+            CanvasPageView()
+                .navigationBarTitleDisplayMode(.inline)
+        }
     }
 }
