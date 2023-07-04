@@ -75,7 +75,9 @@ extension DialView {
                 CharacterDialView()
                     .rotationEffect(Angle(degrees: Double(dialVM.totalRotates[2].width)))
                     .gesture(rotationBtm)
-                    .animation(.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0), value: dialVM.totalRotates[2])
+                    .animation(
+                        .spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0),
+                    value: dialVM.totalRotates[2])
                     .position(x: geo.size.width / 2, y: geo.size.height / 2 + 340)
             }
         }
@@ -107,7 +109,7 @@ extension DialView {
                 dialVM.totalRotates[0].height = value.translation.height + dialVM.currentRotates[0].height
                 
             }
-            .onEnded { value in
+            .onEnded { _ in
                 dialVM.currentRotates[0] = dialVM.totalRotates[0]
             }
     }
@@ -117,7 +119,7 @@ extension DialView {
                 dialVM.totalRotates[1].height = value.translation.height + dialVM.currentRotates[1].height
                 
             }
-            .onEnded { value in
+            .onEnded { _ in
                 dialVM.currentRotates[1] = dialVM.totalRotates[1]
             }
     }
@@ -127,13 +129,11 @@ extension DialView {
                 dialVM.totalRotates[2].width = value.translation.width + dialVM.currentRotates[2].width
                 
             }
-            .onEnded { value in
+            .onEnded { _ in
                 dialVM.currentRotates[2] = dialVM.totalRotates[2]
             }
     }
 }
-
-
 
 struct DialView_Previews: PreviewProvider {
     static var previews: some View {

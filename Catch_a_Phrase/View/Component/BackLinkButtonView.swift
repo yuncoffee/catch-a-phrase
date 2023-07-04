@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BackLinkButtonView: View {
-    var completion: ()->()
+    var completion: () -> Void
     
     var body: some View {
         Button {

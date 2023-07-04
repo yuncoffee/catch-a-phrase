@@ -30,6 +30,7 @@
 		A998FFFC2A2DF91E008332B4 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A998FFFB2A2DF91E008332B4 /* Color+Extension.swift */; };
 		A998FFFF2A2DF9BE008332B4 /* CGFloat+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A998FFFE2A2DF9BE008332B4 /* CGFloat+Extension.swift */; };
 		A99FC94D2A41F80F00F23DE1 /* NanumMyeongjo-YetHangul.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A99FC94C2A41F80F00F23DE1 /* NanumMyeongjo-YetHangul.ttf */; };
+		A9A9BF3B2A546EEC0049E1CD /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = A9A9BF3A2A546EEB0049E1CD /* .swiftlint.yml */; };
 		A9FD56F02A1BA8AF00F95AFD /* Catch_a_PhraseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FD56EF2A1BA8AF00F95AFD /* Catch_a_PhraseApp.swift */; };
 		A9FD56F22A1BA8AF00F95AFD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FD56F12A1BA8AF00F95AFD /* ContentView.swift */; };
 		A9FD56F42A1BA8B100F95AFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9FD56F32A1BA8B100F95AFD /* Assets.xcassets */; };
@@ -84,6 +85,7 @@
 		A998FFFE2A2DF9BE008332B4 /* CGFloat+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extension.swift"; sourceTree = "<group>"; };
 		A99FC94C2A41F80F00F23DE1 /* NanumMyeongjo-YetHangul.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumMyeongjo-YetHangul.ttf"; sourceTree = "<group>"; };
 		A99FC9512A41FAB500F23DE1 /* Catch-a-Phrase-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Catch-a-Phrase-Info.plist"; sourceTree = SOURCE_ROOT; };
+		A9A9BF3A2A546EEB0049E1CD /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		A9FD56EC2A1BA8AF00F95AFD /* Catch_a_Phrase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Catch_a_Phrase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9FD56EF2A1BA8AF00F95AFD /* Catch_a_PhraseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Catch_a_PhraseApp.swift; sourceTree = "<group>"; };
 		A9FD56F12A1BA8AF00F95AFD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -312,6 +314,7 @@
 		A9FD56E32A1BA8AF00F95AFD = {
 			isa = PBXGroup;
 			children = (
+				A9A9BF3A2A546EEB0049E1CD /* .swiftlint.yml */,
 				A98681232A48830900C58C8B /* XCConfig */,
 				A9046DC12A489B0600240385 /* LibreBaskerville-Regular.ttf */,
 				A99FC94C2A41F80F00F23DE1 /* NanumMyeongjo-YetHangul.ttf */,
@@ -386,6 +389,7 @@
 				A9FD56E82A1BA8AF00F95AFD /* Sources */,
 				A9FD56E92A1BA8AF00F95AFD /* Frameworks */,
 				A9FD56EA2A1BA8AF00F95AFD /* Resources */,
+				A9A9BF392A546DCD0049E1CD /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -480,6 +484,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9A9BF3B2A546EEC0049E1CD /* .swiftlint.yml in Resources */,
 				A99FC94D2A41F80F00F23DE1 /* NanumMyeongjo-YetHangul.ttf in Resources */,
 				A9046DC22A489B0600240385 /* LibreBaskerville-Regular.ttf in Resources */,
 				A9FD56F72A1BA8B100F95AFD /* Preview Assets.xcassets in Resources */,
@@ -502,6 +507,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A9A9BF392A546DCD0049E1CD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A9FD56E82A1BA8AF00F95AFD /* Sources */ = {

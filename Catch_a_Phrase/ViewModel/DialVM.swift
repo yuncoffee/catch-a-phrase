@@ -13,7 +13,7 @@ class DialVM: ObservableObject {
     private let KR_CHARS_MAX_LIST = [18, 20, 27] // 초성, 중성, 종성
     
     @Published
-    var isShowAnimation = false{
+    var isShowAnimation = false {
         didSet {
             if isShowAnimation {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.6) {
@@ -60,8 +60,12 @@ class DialVM: ObservableObject {
     @Published
     var prevRotates = [CGSize.zero, CGSize.zero, CGSize.zero] {
         didSet {
-            HapticManager.shared.impact(type: .rigid)
-            AudioServicesPlaySystemSoundWithCompletion(1157, nil);
+//            HapticManager.shared.impact(type: .rigid)
+//            HapticStruct.impact(type: .rigid)
+//            HapticEnum.alarm.impact(type: .rigid)
+            HapticEnum.impact(type: .rigid)
+//            HapticStaticClass.impact(type: .rigid)
+            AudioServicesPlaySystemSoundWithCompletion(1157, nil)
         }
     }
     

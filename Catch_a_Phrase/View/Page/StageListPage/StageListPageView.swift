@@ -35,7 +35,7 @@ extension StageListPageView {
                         .rotationEffect(Angle.degrees(180))
                         .offset(y: .spacing_medium)
                         .zIndex(1)
-                    ScrollView() {
+                    ScrollView {
                         VStack {
                             StageListView(
                                 size: SharedVM.isIOS
@@ -62,7 +62,7 @@ extension StageListPageView {
     }
     
     // MARK: BackLinkButtonView
-    private func _BackLinkButtonView(completion: @escaping()->()) -> some View {
+    private func _BackLinkButtonView(completion: @escaping() -> ()) -> some View {
         BackLinkButtonView {
             completion()
         }
@@ -76,8 +76,10 @@ extension StageListPageView {
             GridItem(.fixed(240), spacing: .spacing_medium)
         ]
         
-        return LazyVGrid(columns: SharedVM.isIOS ? iOSGridItem : iPadOSGridItem, alignment: .center, spacing: .spacing_medium) {
-            ForEach(0..<4) { index in
+        return LazyVGrid(
+            columns: SharedVM.isIOS ? iOSGridItem : iPadOSGridItem,
+            alignment: .center, spacing: .spacing_medium) {
+            ForEach(0..<4) { _ in
                 NavigationLink {
                     CanvasPageView()
                 } label: {

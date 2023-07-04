@@ -23,24 +23,24 @@ struct CanvasPageView: View {
 extension CanvasPageView {
     // MARK: ContainerView
     private func ContainerView() -> some View {
-        GeometryReader { geo in
+        GeometryReader { geometry in
             // MARK: iPadOS
-            if geo.size.width > 834 {
+            if geometry.size.width > 834 {
                 HStack(spacing: .spacing_medium) {
                     /// ScriptView
                     VStack {
                         Text("Script View")
                     }
                     .whiteBackgroundContainerStyleModifier()
-                    .frame(maxWidth: geo.size.width * 0.3)
+                    .frame(maxWidth: geometry.size.width * 0.3)
                     /// DialView
                     VStack {
                         Text("Dial View")
                     }
                     .whiteBackgroundContainerStyleModifier()
-                    .frame(maxWidth: geo.size.width * 0.7)
+                    .frame(maxWidth: geometry.size.width * 0.7)
                 }
-                .frame(maxWidth: geo.size.width)
+                .frame(maxWidth: geometry.size.width)
                 .padding(.spacing_medium)
                 .background(Color.systemGray6)
             } else {

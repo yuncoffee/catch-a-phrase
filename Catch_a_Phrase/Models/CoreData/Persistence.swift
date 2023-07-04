@@ -54,7 +54,6 @@ struct PersistenceController {
         container.viewContext.automaticallyMergesChangesFromParent = true
     }
     
-    
     func addItem() {
         do {
             try container.viewContext.save()
@@ -67,7 +66,7 @@ struct PersistenceController {
     }
 
     func deleteItems(offsets: IndexSet) {
-        //Delete 동작 넣기
+        // Delete 동작 넣기
 //        offsets.map { items[$0] }.forEach(viewContext.delete)
         do {
             try container.viewContext.save()
