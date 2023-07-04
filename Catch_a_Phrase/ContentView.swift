@@ -3,7 +3,6 @@
 //  Catch_a_Phrase
 //
 //  Created by Yun Dongbeom on 2023/05/22.
-//  add gitkraken
 //
 
 import SwiftUI
