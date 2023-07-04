@@ -8,7 +8,6 @@
 import XCTest
 
 final class Catch_a_PhraseUITestsLaunchTests: XCTestCase {
-
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
     }

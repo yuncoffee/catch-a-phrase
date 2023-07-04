@@ -11,7 +11,7 @@ struct TextView: View {
     var content: String
     var language: CustomFontStyle = .Kr
     var size: Double = 16
-    
+
     var body: some View {
         Text(content)
             .customFontModifier(name: language, size: size)

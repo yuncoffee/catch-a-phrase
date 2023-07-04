@@ -10,7 +10,7 @@ import SwiftUI
 struct CanvasPageView: View {
     @State
     private var isShowPopOver: Bool = false
-    
+
     var body: some View {
         ContainerView()
             .toolbar {
@@ -22,9 +22,12 @@ struct CanvasPageView: View {
 
 extension CanvasPageView {
     // MARK: ContainerView
+
     private func ContainerView() -> some View {
         GeometryReader { geometry in
+
             // MARK: iPadOS
+
             if geometry.size.width > 834 {
                 HStack(spacing: .spacing_medium) {
                     /// ScriptView
@@ -45,15 +48,18 @@ extension CanvasPageView {
                 .background(Color.systemGray6)
             } else {
                 // MARK: iOS
+
                 iOSLayoutView()
             }
         }
     }
-    
+
     // MARK: iOSLayoutView
+
     private func iOSLayoutView() -> some View {
         VStack(spacing: 0) {
             // MARK: Progress
+
             HStack {
                 Image(systemName: "lock.fill")
                     .resizable()
@@ -63,7 +69,9 @@ extension CanvasPageView {
                 Text("맞춘 / 횟수")
             }
             .frame(maxWidth: .infinity, maxHeight: 64)
+
             // MARK: QuizView
+
             VStack {
                 DialView()
             }
@@ -73,8 +81,9 @@ extension CanvasPageView {
         }
         .background(Color.systemGray6)
     }
-    
+
     // MARK: ShowPlayRuleButtonView
+
     private func ShowPlayRuleButtonView() -> some View {
         Button {
             self.isShowPopOver = true
@@ -86,12 +95,13 @@ extension CanvasPageView {
                 .foregroundColor(Color(UIColor.label))
         }
         .frame(width: .btn_outer_medium, height: .btn_outer_medium)
-        .sheet(isPresented: self.$isShowPopOver) {
+        .sheet(isPresented: $isShowPopOver) {
             PlayDescriptionView()
         }
     }
-    
+
     // MARK: PlayDescriptionView
+
     private func PlayDescriptionView() -> some View {
         VStack {
             ScrollView {
@@ -101,28 +111,28 @@ extension CanvasPageView {
                     How to Play?
 
                     Please complete the first verse of the locked poem for each question.
-                    
+
                     Each time you complete the first phrase, the unlock counter goes up.
 
                     1. At the top of the letter, there is a phrase that needs to be matched.
-                    
-                    
+
+
                     2. Drag the letter and send it to the phrase.
-                    
-                    
+
+
                     3. If the current letter matches the letter that needs to be matched, the letter color will change.
-                    
-                    
+
+
                     4. If the current letter does not match the letter you need to match, please change the letter.
-                    
-                    
+
+
                     5. You can change the letters by swiping the dials on the left, right, and bottom of the letters.
 
                     Good luck.
-                    
+
                     Enjoy Catch a Phrase!
-                    
-                    
+
+
                     Caution! You can compare letters from the beginning.
 
                     """,
@@ -135,11 +145,9 @@ extension CanvasPageView {
         }
         .padding(24)
     }
-    
+
     private func ScriptView() -> some View {
-        VStack {
-            
-        }
+        VStack {}
     }
 }
 

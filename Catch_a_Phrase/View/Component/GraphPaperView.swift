@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct GraphPaperView: View {
-    private let lineStyle = StrokeStyle(lineWidth: 2,lineCap: .round, dash: [4, 6])
+    private let lineStyle = StrokeStyle(lineWidth: 2, lineCap: .round, dash: [4, 6])
     var size: CGFloat = 320
-    
+
     var body: some View {
         ZStack {
             VStack(alignment: .center, spacing: 0) {
@@ -34,16 +34,16 @@ struct GraphPaperView: View {
 
 extension GraphPaperView {
     var DottedLine: some View {
-        return ForEach(0..<7) { _ in
+        return ForEach(0 ..< 7) { _ in
             Line().stroke(Color.systemGray4, style: lineStyle)
         }
     }
-    
+
     struct Line: Shape {
         func path(in rect: CGRect) -> Path {
             let start = CGPoint(x: rect.minX, y: rect.midY)
             let end = CGPoint(x: rect.maxX, y: rect.midY)
-            
+
             return Path { p in
                 p.move(to: start)
                 p.addLine(to: end)

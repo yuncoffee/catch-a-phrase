@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct Catch_a_PhraseApp: App {
     let persistenceController = PersistenceController.shared
-    
+
     var body: some Scene {
         WindowGroup {
             NavigationStack {

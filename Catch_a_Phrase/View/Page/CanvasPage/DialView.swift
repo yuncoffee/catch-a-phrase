@@ -10,20 +10,19 @@ import SwiftUI
 struct DialView: View {
     @StateObject
     var dialVM = DialVM()
-    
+
     var body: some View {
         VStack {
             CurrentScriptView()
             CurrentDialView()
         }
-        
     }
 }
 
 extension DialView {
     private func CurrentScriptView() -> some View {
         let fontSize: CGFloat = 64
-        
+
         return VStack(spacing: 4) {
             HStack(spacing: 0) {
                 TextView(content: "맞춤", size: fontSize)
@@ -38,9 +37,8 @@ extension DialView {
                 .background(Color.systemGray4)
         }
         .frame(maxWidth: .infinity)
-        
     }
-    
+
     private func CurrentDialView() -> some View {
         GeometryReader { geo in
             ZStack {
@@ -54,7 +52,8 @@ extension DialView {
                             dampingFraction: 0.6,
                             blendDuration: 0
                         ),
-                        value: dialVM.totalRotates[0])
+                        value: dialVM.totalRotates[0]
+                    )
                     .position(x: -132, y: geo.size.height / 2 - 24)
                 // 우측 중성 다이얼
                 CharacterDialView()
@@ -66,7 +65,8 @@ extension DialView {
                             dampingFraction: 0.6,
                             blendDuration: 0
                         ),
-                        value: dialVM.totalRotates[1])
+                        value: dialVM.totalRotates[1]
+                    )
                     .position(
                         x: geo.size.width + 132,
                         y: geo.size.height / 2 - 24
@@ -77,15 +77,16 @@ extension DialView {
                     .gesture(rotationBtm)
                     .animation(
                         .spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0),
-                    value: dialVM.totalRotates[2])
+                        value: dialVM.totalRotates[2]
+                    )
                     .position(x: geo.size.width / 2, y: geo.size.height / 2 + 340)
             }
         }
     }
-    
+
     private func CharacterDialView() -> some View {
         ZStack {
-            ForEach(0..<360) { deg in
+            ForEach(0 ..< 360) { deg in
                 let isMarkableTic = deg % 4 == 0
                 if deg % 6 == 0 {
                     Rectangle()
@@ -102,32 +103,32 @@ extension DialView {
 }
 
 // MARK: Gesutre Info
+
 extension DialView {
     private var rotationLeft: some Gesture {
         DragGesture()
             .onChanged { value in
                 dialVM.totalRotates[0].height = value.translation.height + dialVM.currentRotates[0].height
-                
             }
             .onEnded { _ in
                 dialVM.currentRotates[0] = dialVM.totalRotates[0]
             }
     }
+
     private var rotationRight: some Gesture {
         DragGesture()
             .onChanged { value in
                 dialVM.totalRotates[1].height = value.translation.height + dialVM.currentRotates[1].height
-                
             }
             .onEnded { _ in
                 dialVM.currentRotates[1] = dialVM.totalRotates[1]
             }
     }
+
     private var rotationBtm: some Gesture {
         DragGesture()
             .onChanged { value in
                 dialVM.totalRotates[2].width = value.translation.width + dialVM.currentRotates[2].width
-                
             }
             .onEnded { _ in
                 dialVM.currentRotates[2] = dialVM.totalRotates[2]

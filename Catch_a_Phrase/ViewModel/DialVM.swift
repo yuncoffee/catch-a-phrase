@@ -5,13 +5,13 @@
 //  Created by Yun Dongbeom on 2023/06/27.
 //
 
-import Foundation
 import AVFoundation
+import Foundation
 
 class DialVM: ObservableObject {
     private let DIAL_LIMIT_ANGLE: CGFloat = 32
     private let KR_CHARS_MAX_LIST = [18, 20, 27] // 초성, 중성, 종성
-    
+
     @Published
     var isShowAnimation = false {
         didSet {
@@ -22,7 +22,7 @@ class DialVM: ObservableObject {
             }
         }
     }
-    
+
     /// 다이얼이 돌아간 값을 저장하기 위한 값
     @Published
     var totalRotates = [CGSize.zero, CGSize.zero, CGSize.zero] {
@@ -56,7 +56,7 @@ class DialVM: ObservableObject {
             }
         }
     }
-    
+
     @Published
     var prevRotates = [CGSize.zero, CGSize.zero, CGSize.zero] {
         didSet {
@@ -68,10 +68,10 @@ class DialVM: ObservableObject {
             AudioServicesPlaySystemSoundWithCompletion(1157, nil)
         }
     }
-    
+
     @Published
     var currentRotates = [CGSize.zero, CGSize.zero, CGSize.zero]
-    
+
     /// 초성: 18자,
     /// 중성: 20자,
     /// 종성: 27자

@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 //
-//public struct CustomFont {
+// public struct CustomFont {
 //    public static func registerFonts(fontName: String) {
 //        registerFont(bundle: Bundle.main , fontName: fontName, fontExtension: ".ttf") //change according to your ext.
 //    }
@@ -24,4 +24,4 @@ import SwiftUI
 //
 //        CTFontManagerRegisterGraphicsFont(font, &error)
 //    }
-//}
+// }

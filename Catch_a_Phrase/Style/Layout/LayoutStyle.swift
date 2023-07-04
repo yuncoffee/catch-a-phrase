@@ -9,7 +9,6 @@ import Foundation
 import SwiftUI
 
 struct WhiteBackgroundContainerStyleModifier: ViewModifier {
-    
     func body(content: Content) -> some View {
         content
             .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -20,6 +19,6 @@ struct WhiteBackgroundContainerStyleModifier: ViewModifier {
 
 extension View {
     func whiteBackgroundContainerStyleModifier() -> some View {
-        return self.modifier(WhiteBackgroundContainerStyleModifier())
+        return modifier(WhiteBackgroundContainerStyleModifier())
     }
 }

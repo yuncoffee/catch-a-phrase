@@ -15,7 +15,7 @@ struct StartPageView: View {
     private let APP_NAME = Bundle.main.appName
     private let btnSize: CGFloat = .btn_inner_medium
     private let btnTouchAreaSize: CGFloat = .btn_outer_medium
-    
+
     var body: some View {
         ContainerView()
     }
@@ -23,10 +23,11 @@ struct StartPageView: View {
 
 extension StartPageView {
     // MARK: ContainerView
+
     private func ContainerView() -> some View {
         let offsetX: CGFloat = 40
         let offsetY: CGFloat = 32
-        
+
         return GeometryReader { geo in
             VStack(spacing: 0) {
                 ZStack {
@@ -62,15 +63,16 @@ extension StartPageView {
             .background(Color.systemGray6)
         }
     }
-    
+
     // MARK: TitleView
+
     private func TitleView() -> some View {
         ZStack {
             if SharedVM.isIOS {
                 GraphPaperView(size: 296)
             } else {
                 HStack(spacing: -2) {
-                    ForEach(0..<2) { _ in
+                    ForEach(0 ..< 2) { _ in
                         GraphPaperView()
                     }
                 }
@@ -84,8 +86,9 @@ extension StartPageView {
             .foregroundColor(Color(UIColor.label))
         }
     }
-    
+
     // MARK: StartButtonView
+
     private func StartButtonView() -> some View {
         Button(action: {
             print("link to select stage!")
@@ -106,37 +109,38 @@ extension StartPageView {
             StageListPageView()
         }
     }
-    
+
     // MARK: AppDescriptionView
+
     private func AppDescriptionView() -> some View {
         VStack {
             ScrollView {
                 TextView(content:
-                """
-                Hello, I’m Coffee.
-                
-                I'd like to introduce interesting Korean and contents in Korean to you.
-                
-                There are various Korean contents, but among them,
-                I will introduce Korean poems where words and sentences can be interpreted in various ways.
-                
-                Among the well-known poems in Korea, the first verse picked four especially famous poems.
-                
-                But wouldn't it be more fun to learn about Hangul together than just looking at it?
-                
-                Make a morpheme by turning a dial that
-                can change the combination of 'Initial consonants', 'Medial vowels', and 'Final consonants', and complete the first phrase.
-                
-                Soon, you will be able to learn more about Hangul and Korean expressions.
-                
-                The characteristics of Hangeul, which create a single 'morphism' through the combination of 'Initial consonants', 'Medial vowels', and 'Final consonants'
-                
-                I'd be very happy if I got interested.
-                
-                Enjoy Catch a Phrase!
-                """, language: .En, size: 24)
-                .foregroundColor(Color(UIColor.label))
-                .multilineTextAlignment(.leading)
+                    """
+                    Hello, I’m Coffee.
+
+                    I'd like to introduce interesting Korean and contents in Korean to you.
+
+                    There are various Korean contents, but among them,
+                    I will introduce Korean poems where words and sentences can be interpreted in various ways.
+
+                    Among the well-known poems in Korea, the first verse picked four especially famous poems.
+
+                    But wouldn't it be more fun to learn about Hangul together than just looking at it?
+
+                    Make a morpheme by turning a dial that
+                    can change the combination of 'Initial consonants', 'Medial vowels', and 'Final consonants', and complete the first phrase.
+
+                    Soon, you will be able to learn more about Hangul and Korean expressions.
+
+                    The characteristics of Hangeul, which create a single 'morphism' through the combination of 'Initial consonants', 'Medial vowels', and 'Final consonants'
+
+                    I'd be very happy if I got interested.
+
+                    Enjoy Catch a Phrase!
+                    """, language: .En, size: 24)
+                    .foregroundColor(Color(UIColor.label))
+                    .multilineTextAlignment(.leading)
             }
         }
         .padding(24)

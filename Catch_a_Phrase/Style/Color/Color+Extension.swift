@@ -10,10 +10,12 @@ import SwiftUI
 
 extension Color {
     // MARK: ColorScale - SecondaryColor
+
     static let systemGreen = Color(UIColor.systemGreen)
     static let systemRed = Color(UIColor.systemRed)
-    
+
     // MARK: GrayScale
+
     static let systemWhite = Color(UIColor.white)
     /// 서브 타이틀 텍스트 컬러
     static let systemGray = Color(UIColor.systemGray)
