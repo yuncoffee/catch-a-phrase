@@ -18,6 +18,8 @@ struct BackLinkButtonView: View {
         }
         .frame(width: .btn_outer_medium, height: .btn_outer_medium)
         .foregroundColor(.systemGray2)
+        .accessibilityLabel("hello")
+        
     }
 }
 
