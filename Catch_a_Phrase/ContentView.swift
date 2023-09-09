@@ -79,14 +79,3 @@ struct ContentView: View {
         StartPageView()
     }
 }
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationStack {
-            ContentView().environment(
-                \.managedObjectContext,
-                PersistenceController.preview.container.viewContext
-            )
-        }
-    }
-}

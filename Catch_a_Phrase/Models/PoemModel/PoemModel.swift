@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct Poem {
+struct Poem: Identifiable {
+    
     let id = UUID()
     // 제목 / 내용 / 저자
     var krInfo: (String, String, String)

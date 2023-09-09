@@ -13,6 +13,8 @@ struct StageListPageView: View {
 
     @State
     private var isShowCanvas = false
+    
+    @StateObject var poemVM = PoemVM()
 
     var body: some View {
         ContainerView()
@@ -77,21 +79,21 @@ extension StageListPageView {
         let iOSGridItem = [GridItem(.fixed(size), spacing: .spacing_medium)]
         let iPadOSGridItem = [
             GridItem(.fixed(240), spacing: .spacing_medium),
-            GridItem(.fixed(240), spacing: .spacing_medium),
+            GridItem(.fixed(240), spacing: .spacing_medium)
         ]
 
         return LazyVGrid(
             columns: SharedVM.isIOS ? iOSGridItem : iPadOSGridItem,
             alignment: .center, spacing: .spacing_medium
         ) {
-            ForEach(0 ..< 4) { _ in
+            ForEach(Array(poemVM.poems.enumerated()), id: \.element.id) { index, poem in
                 NavigationLink {
-                    CanvasPageView()
+                    CanvasPageView(currentIndex: index, poem: poem)
                 } label: {
                     ZStack {
                         GraphPaperView(size: size)
                             .frame(minHeight: size)
-                        TextView(content: "가", size: 120)
+                        TextView(content: poem.thumbChar, size: 120)
                             .foregroundColor(Color(UIColor.label))
                     }
                 }

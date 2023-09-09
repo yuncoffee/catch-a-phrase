@@ -60,11 +60,12 @@ class DialVM: ObservableObject {
     @Published
     var prevRotates = [CGSize.zero, CGSize.zero, CGSize.zero] {
         didSet {
-//            HapticManager.shared.impact(type: .rigid)
-//            HapticStruct.impact(type: .rigid)
-//            HapticEnum.alarm.impact(type: .rigid)
+            HapticManager.shared.impact(type: .rigid)
             HapticEnum.impact(type: .rigid)
-//            HapticStaticClass.impact(type: .rigid)
+            HapticStruct.impact(type: .rigid)
+            HapticStaticClass.impact(type: .rigid)
+            HapticEnum.alarm.impact(type: .rigid)
+
             AudioServicesPlaySystemSoundWithCompletion(1157, nil)
         }
     }
@@ -98,22 +99,23 @@ class DialVM: ObservableObject {
 }
 
 extension DialVM {
-//    func updateCurrentCharcter(globalStore: GlobalStore) {
-//        if let firstScaler = Unicode.Scalar(0x1100 + krScalers[0]),
-//           let secondaryScaler = Unicode.Scalar(0x1161 + krScalers[1]),
-//           let thirdScaler = Unicode.Scalar(0x11a6 + 1 + krScalers[2])
-//        {
-//            let char = krScalers[2] == 0
-//            ? String(firstScaler).appending(String(secondaryScaler))
-//            : String(firstScaler).appending(String(secondaryScaler)).appending(String(thirdScaler))
-//
-//            globalStore.currentCharcter = char
-//
-//            if globalStore.currentCharcter.count > 0 && globalStore.correctYetWord.count > 0 &&   globalStore.currentCharcter[globalStore.currentCharcter.startIndex] == globalStore.correctYetWord[globalStore.correctYetWord.startIndex] {
-//                isShowAnimation = true
-//            } else {
-//                isShowAnimation = false
-//            }
-//        }
-//    }
+    func updateCurrentCharcter(store: CanvasVM) {
+        if let firstScaler = Unicode.Scalar(0x1100 + krScalers[0]),
+           let secondaryScaler = Unicode.Scalar(0x1161 + krScalers[1]),
+           let thirdScaler = Unicode.Scalar(0x11a6 + 1 + krScalers[2]) {
+            let char = krScalers[2] == 0
+            ? String(firstScaler).appending(String(secondaryScaler))
+            : String(firstScaler).appending(String(secondaryScaler)).appending(String(thirdScaler))
+
+            store.currentCharcter = char
+
+            if !store.currentCharcter.isEmpty &&
+                !store.correctYetWord.isEmpty &&
+                store.currentCharcter[store.currentCharcter.startIndex] == store.correctYetWord[store.correctYetWord.startIndex] {
+                isShowAnimation = true
+            } else {
+                isShowAnimation = false
+            }
+        }
+    }
 }

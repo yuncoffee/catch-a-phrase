@@ -10,11 +10,19 @@ import SwiftUI
 struct DialView: View {
     @StateObject
     var dialVM = DialVM()
+    @StateObject
+    var canvasVM: CanvasVM
 
+    @State
+    private var isAnimationStart = false
+    
     var body: some View {
         VStack {
             CurrentScriptView()
             CurrentDialView()
+        }
+        .onReceive(dialVM.$krScalers) { _ in
+            dialVM.updateCurrentCharcter(store: canvasVM)
         }
     }
 }
@@ -25,10 +33,20 @@ extension DialView {
 
         return VStack(spacing: 4) {
             HStack(spacing: 0) {
-                TextView(content: "맞춤", size: fontSize)
+                TextView(content: canvasVM.correctWord, size: fontSize)
                     .foregroundColor(Color(UIColor.label))
-                TextView(content: "맞춰야", size: fontSize)
+                TextView(content: canvasVM.correctYetWord, size: fontSize)
                     .foregroundColor(.systemGray3)
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .scaleEffect(canvasVM.isWrongAnswerSubmited)
+            .animation(.spring(response: 0.1, dampingFraction: 0.2, blendDuration: 0).repeatCount(3, autoreverses: true), value: canvasVM.isWrongAnswerSubmited)
+            .onChange(of: canvasVM.isWrongAnswerSubmited) { newValue in
+                if newValue == 0.9 {
+                    isAnimationStart = true
+                } else {
+                    isAnimationStart = false
+                }
             }
             .frame(maxWidth: .infinity, maxHeight: 100)
             .padding(.vertical, 16)
@@ -80,6 +98,17 @@ extension DialView {
                         value: dialVM.totalRotates[2]
                     )
                     .position(x: geo.size.width / 2, y: geo.size.height / 2 + 340)
+                DragableTextBoxView(canvasVM: canvasVM, krScalers: $dialVM.krScalers)
+                Image(systemName: "arrow.up.circle.fill")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 40, height: 40)
+                    .foregroundColor(.green)
+                    .offset(y: dialVM.isShowAnimation ? -8 : 0)
+                    .animation(.easeIn(duration: 0.4).repeatForever( autoreverses: true),
+                               value: dialVM.isShowAnimation
+                    )
+                    .opacity(dialVM.isShowAnimation ? 1 : 0)
             }
         }
     }
@@ -138,6 +167,6 @@ extension DialView {
 
 struct DialView_Previews: PreviewProvider {
     static var previews: some View {
-        DialView()
+        DialView(canvasVM: CanvasVM())
     }
 }

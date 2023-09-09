@@ -29,4 +29,5 @@ extension Color {
     static let systemGray6 = Color(UIColor.systemGray6)
     /// 디폴트 텍스트 컬러
     static let systemBlack = Color(UIColor.black)
+    static let siri_btn = Color("siri_btn")
 }

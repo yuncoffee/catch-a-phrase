@@ -16,6 +16,7 @@ struct Catch_a_PhraseApp: App {
             NavigationStack {
                 ContentView()
                     .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                    .environmentObject(SharedVM())
             }
         }
     }

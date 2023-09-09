@@ -10,4 +10,11 @@ import UIKit
 
 class SharedVM: ObservableObject {
     static let isIOS = UIDevice.current.systemName == "iOS"
+    
+    @Published
+    var isLanguageKr = true
+    
+    func toggleLanguage() {
+        isLanguageKr.toggle()
+    }
 }

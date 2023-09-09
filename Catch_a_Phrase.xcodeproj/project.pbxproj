@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A902BCDB2AAC3775006DCA63 /* CanvasVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A902BCDA2AAC3775006DCA63 /* CanvasVM.swift */; };
+		A902BCDD2AAC3B8E006DCA63 /* DragableTextBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A902BCDC2AAC3B8E006DCA63 /* DragableTextBoxView.swift */; };
+		A902BCDF2AAC41F0006DCA63 /* PoemVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A902BCDE2AAC41F0006DCA63 /* PoemVM.swift */; };
+		A902BCE12AAC450C006DCA63 /* ScriptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A902BCE02AAC450C006DCA63 /* ScriptView.swift */; };
+		A902BCE32AAC4617006DCA63 /* PositionObservingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A902BCE22AAC4617006DCA63 /* PositionObservingView.swift */; };
 		A9046DC02A4896EF00240385 /* SharedVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9046DBF2A4896EF00240385 /* SharedVM.swift */; };
 		A9046DC22A489B0600240385 /* LibreBaskerville-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9046DC12A489B0600240385 /* LibreBaskerville-Regular.ttf */; };
 		A9046DC42A496AE900240385 /* StageListPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9046DC32A496AE900240385 /* StageListPageView.swift */; };
@@ -60,6 +65,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A902BCDA2AAC3775006DCA63 /* CanvasVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasVM.swift; sourceTree = "<group>"; };
+		A902BCDC2AAC3B8E006DCA63 /* DragableTextBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragableTextBoxView.swift; sourceTree = "<group>"; };
+		A902BCDE2AAC41F0006DCA63 /* PoemVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemVM.swift; sourceTree = "<group>"; };
+		A902BCE02AAC450C006DCA63 /* ScriptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptView.swift; sourceTree = "<group>"; };
+		A902BCE22AAC4617006DCA63 /* PositionObservingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionObservingView.swift; sourceTree = "<group>"; };
 		A9046DBF2A4896EF00240385 /* SharedVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedVM.swift; sourceTree = "<group>"; };
 		A9046DC12A489B0600240385 /* LibreBaskerville-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LibreBaskerville-Regular.ttf"; sourceTree = "<group>"; };
 		A9046DC32A496AE900240385 /* StageListPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageListPageView.swift; sourceTree = "<group>"; };
@@ -131,6 +141,8 @@
 			children = (
 				A9046DBF2A4896EF00240385 /* SharedVM.swift */,
 				A934BBC12A4B1D720021C266 /* DialVM.swift */,
+				A902BCDA2AAC3775006DCA63 /* CanvasVM.swift */,
+				A902BCDE2AAC41F0006DCA63 /* PoemVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -164,6 +176,8 @@
 			children = (
 				A9046DC92A49C36D00240385 /* CanvasPageView.swift */,
 				A934BBBF2A4B18B70021C266 /* DialView.swift */,
+				A902BCDC2AAC3B8E006DCA63 /* DragableTextBoxView.swift */,
+				A902BCE02AAC450C006DCA63 /* ScriptView.swift */,
 			);
 			path = CanvasPage;
 			sourceTree = "<group>";
@@ -299,6 +313,7 @@
 				A99800072A2E07CC008332B4 /* GraphPaperView.swift */,
 				A9046DC52A4971E800240385 /* BackLinkButtonView.swift */,
 				A9046DC72A49B97100240385 /* GradientBoxView.swift */,
+				A902BCE22AAC4617006DCA63 /* PositionObservingView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -338,11 +353,11 @@
 		A9FD56EE2A1BA8AF00F95AFD /* Catch_a_Phrase */ = {
 			isa = PBXGroup;
 			children = (
-				A9046DBE2A4896CE00240385 /* ViewModel */,
 				A99FC9512A41FAB500F23DE1 /* Catch-a-Phrase-Info.plist */,
 				A998FFEF2A2DF0A0008332B4 /* Extension */,
 				A998FFE72A2DED39008332B4 /* Style */,
 				A998FFDC2A2DD558008332B4 /* Utils */,
+				A9046DBE2A4896CE00240385 /* ViewModel */,
 				A998FFDB2A2DD551008332B4 /* View */,
 				A998FFD92A2DD471008332B4 /* Models */,
 				A9FD56EF2A1BA8AF00F95AFD /* Catch_a_PhraseApp.swift */,
@@ -386,7 +401,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A9FD57162A1BA8B100F95AFD /* Build configuration list for PBXNativeTarget "Catch_a_Phrase" */;
 			buildPhases = (
-				A9A9BF402A547F860049E1CD /* Swift Format */,
 				A9A9BF392A546DCD0049E1CD /* Swift Lint */,
 				A9FD56E82A1BA8AF00F95AFD /* Sources */,
 				A9FD56E92A1BA8AF00F95AFD /* Frameworks */,
@@ -528,24 +542,6 @@
 			shellPath = /bin/sh;
 			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
-		A9A9BF402A547F860049E1CD /* Swift Format */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Swift Format";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nexport PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftformat > /dev/null; then\n  swiftformat .\nelse\n  echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -560,8 +556,11 @@
 				A934BBC02A4B18B70021C266 /* DialView.swift in Sources */,
 				A9046DCA2A49C36D00240385 /* CanvasPageView.swift in Sources */,
 				A98681252A4885BD00C58C8B /* Bundle+Extension.swift in Sources */,
+				A902BCDF2AAC41F0006DCA63 /* PoemVM.swift in Sources */,
 				A9046DC62A4971E800240385 /* BackLinkButtonView.swift in Sources */,
 				A9FD56FC2A1BA8B100F95AFD /* Catch_a_Phrase.xcdatamodeld in Sources */,
+				A902BCDD2AAC3B8E006DCA63 /* DragableTextBoxView.swift in Sources */,
+				A902BCE32AAC4617006DCA63 /* PositionObservingView.swift in Sources */,
 				A99800082A2E07CC008332B4 /* GraphPaperView.swift in Sources */,
 				A9046DC42A496AE900240385 /* StageListPageView.swift in Sources */,
 				A934BBB92A4B10EE0021C266 /* LayoutStyle.swift in Sources */,
@@ -571,7 +570,9 @@
 				A9046DC82A49B97100240385 /* GradientBoxView.swift in Sources */,
 				A998FFF12A2DF0B2008332B4 /* Font+Extension.swift in Sources */,
 				A9FD56F92A1BA8B100F95AFD /* Persistence.swift in Sources */,
+				A902BCDB2AAC3775006DCA63 /* CanvasVM.swift in Sources */,
 				A9FD56F22A1BA8AF00F95AFD /* ContentView.swift in Sources */,
+				A902BCE12AAC450C006DCA63 /* ScriptView.swift in Sources */,
 				A99800032A2DFA76008332B4 /* PoemModel.swift in Sources */,
 				A998FFFA2A2DF6FD008332B4 /* TextView.swift in Sources */,
 				A9FD56F02A1BA8AF00F95AFD /* Catch_a_PhraseApp.swift in Sources */,
