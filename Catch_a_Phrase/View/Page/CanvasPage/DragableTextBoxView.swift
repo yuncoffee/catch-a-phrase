@@ -35,16 +35,26 @@ struct DragableTextBoxView: View {
         let ios = SharedVM.isIOS
         
         ZStack {
-            GraphPaperView(size: SharedVM.isIOS ? 240 : 320)
-                .frame(minHeight: SharedVM.isIOS ? 240 : 320)
+            GraphPaperView(size: 240)
+                .frame(minHeight: 240)
             TextView(content: canvasVM.currentCharcter,
-                     size: draggedOffset.height < -100 ? 64 : ios ? 160 : 200)
+                     size: draggedOffset.height < -100 ? 64 : 160)
                 .offset(draggedOffset)
                 .gesture(drag)
                 .animation(.easeIn(duration: 0.1), value: draggedOffset)
                 .opacity(isSubmitAble ? 0 : 1)
                 .foregroundColor(Color(UIColor.label))
+//            GraphPaperView(size: SharedVM.isIOS ? 240 : 320)
+//                .frame(minHeight: SharedVM.isIOS ? 240 : 320)
+//            TextView(content: canvasVM.currentCharcter,
+//                     size: draggedOffset.height < -100 ? 64 : ios ? 160 : 200)
+//                .offset(draggedOffset)
+//                .gesture(drag)
+//                .animation(.easeIn(duration: 0.1), value: draggedOffset)
+//                .opacity(isSubmitAble ? 0 : 1)
+//                .foregroundColor(Color(UIColor.label))
             ReadCurrentCharView
+            
         }.frame(width: 320, height: 320)
     }
 }
@@ -66,7 +76,8 @@ extension DragableTextBoxView {
         .frame(width: 40, height: 40)
         .background(Color.siri_btn)
         .cornerRadius(50)
-        .position(x: ios ? 260 - 12 : 300 - 12, y: ios ? 260 - 12 : 300 - 12)
+//        .position(x: ios ? 260 - 12 : 300 - 12, y: ios ? 260 - 12 : 300 - 12)
+        .position(x: 260 - 12, y: 260 - 12)
     }
 }
 

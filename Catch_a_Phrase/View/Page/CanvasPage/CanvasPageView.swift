@@ -62,12 +62,14 @@ extension CanvasPageView {
                     canvasVM: canvasVM,
                     poem: poem)
                 .frame(maxWidth: .infinity,
-                       minHeight: SharedVM.isIOS ? 0 : geometry.size.width * 0.3,
+                       minHeight: SharedVM.isIOS
+                       ? 0
+                       : 0,
                        maxHeight: canvasVM.isFinished
                        ? .infinity
                        : SharedVM.isIOS
                        ? 0
-                       : geometry.size.width * 0.3
+                       : 0
                 )
                 .animation(.spring(response: 0.5, dampingFraction: 0.5, blendDuration: 0), value: canvasVM.isFinished)
                 .background(Color.systemGray6)
@@ -79,11 +81,9 @@ extension CanvasPageView {
     }
     
     // MARK: iOSLayoutView
-    
     private func iOSLayoutView() -> some View {
         VStack(spacing: 0) {
             // MARK: Progress
-            
             HStack {
                 Image(systemName: "lock.fill")
                     .resizable()

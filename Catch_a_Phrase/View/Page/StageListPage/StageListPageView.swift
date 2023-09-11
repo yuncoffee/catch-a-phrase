@@ -83,7 +83,8 @@ extension StageListPageView {
         ]
 
         return LazyVGrid(
-            columns: SharedVM.isIOS ? iOSGridItem : iPadOSGridItem,
+//            columns: SharedVM.isIOS ? iOSGridItem : iPadOSGridItem,
+            columns: iOSGridItem,
             alignment: .center, spacing: .spacing_medium
         ) {
             ForEach(Array(poemVM.poems.enumerated()), id: \.element.id) { index, poem in

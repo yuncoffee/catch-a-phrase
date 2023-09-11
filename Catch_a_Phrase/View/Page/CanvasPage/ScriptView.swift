@@ -25,9 +25,9 @@ struct ScriptView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 24) {
-            if !SharedVM.isIOS {
-                ScriptHeaderView
-            }
+//            if !SharedVM.isIOS {
+//                ScriptHeaderView
+//            }
             PoemScriptView
             ScriptFooterView
         }
@@ -60,10 +60,6 @@ extension ScriptView {
                     language: sharedVM.isLanguageKr ? .Kr : .En,
                     size: 24
                 )
-//                .foregroundColor(
-//                    canvasVM.isFinished
-//                    ? .systemBlack
-//                    : .systemGray3)
                 .padding(.bottom, 24)
                 .frame(maxWidth: .infinity, alignment: .leading)
             }

@@ -68,15 +68,16 @@ extension StartPageView {
 
     private func TitleView() -> some View {
         ZStack {
-            if SharedVM.isIOS {
-                GraphPaperView(size: 296)
-            } else {
-                HStack(spacing: -2) {
-                    ForEach(0 ..< 2) { _ in
-                        GraphPaperView()
-                    }
-                }
-            }
+//            if SharedVM.isIOS {
+//                GraphPaperView(size: 296)
+//            } else {
+//                HStack(spacing: -2) {
+//                    ForEach(0 ..< 2) { _ in
+//                        GraphPaperView()
+//                    }
+//                }
+//            }
+            GraphPaperView(size: 296)
             TextView(
                 content: APP_NAME,
                 language: .En,
